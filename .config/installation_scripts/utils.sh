@@ -34,3 +34,18 @@ function ask() {
 		fi
 	done
 }
+
+# Function to check if a line is present in a file
+function append_if_not_present() {
+    local file=$1
+    local line=$2
+
+    if grep -Fxq "$line" "$file"; then
+        # Line is already present
+        return
+    else
+        # Append the line to the file
+        echo "$line" >> "$file"
+        print ${MAGENTA} "✔ Added \"$line\" to $file"
+    fi
+}

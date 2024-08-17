@@ -8,8 +8,8 @@ function installSimpleTerminal() {
   # Proceed with installation if st is not found
   print ${YELLOW} "\n★ Installing st (Simple Terminal) ..."
   
-  mkdir -p ${CONFIF_PATH}/dwm
-  ST_PATH = ${CONFIG_PATH}/dwm
+  mkdir -p ${CONFIF_PATH}/st
+  PATH_ST = ${CONFIG_PATH}/st
 
   # Clone the repository
   git clone https://git.suckless.org/st ${PATH_ST}
