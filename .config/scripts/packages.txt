@@ -1,0 +1,12 @@
+man-db
+man-pages
+git
+neovim
+sl
+base-devel
+xorg-server
+xorg-xinit
+libx11
+libxinerama
+libxft
+webkit2gtk
