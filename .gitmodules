@@ -1,0 +1,6 @@
+[submodule "/home/1337encrypted/.config/dwm"]
+	path = /home/1337encrypted/.config/dwm
+	url = git@github.com:1337encrypted/dwm.git
+[submodule "/home/1337encrypted/.config/st"]
+	path = /home/1337encrypted/.config/st
+	url = git@github.com:1337encrypted/st.git
