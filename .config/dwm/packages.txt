@@ -1,0 +1,17 @@
+man-db
+man-pages
+git
+neovim
+tree
+sl
+base-devel
+xorg-server
+xorg-xinit
+libx11
+libxinerama
+libxft
+webkit2gtk
+whois
+nmap
+picom
+nitrogen

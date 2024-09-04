@@ -1,0 +1,89 @@
+#   ┏━┓╻  ╻┏━┓┏━┓┏━╸┏━┓
+#   ┣━┫┃  ┃┣━┫┗━┓┣╸ ┗━┓
+#   ╹ ╹┗━╸╹╹ ╹┗━┛┗━╸┗━┛
+
+#   ░█▀▀░█▀▀░█▀█░█▀▀░█▀▄░█▀█░█░░
+#   ░█░█░█▀▀░█░█░█▀▀░█▀▄░█▀█░█░░
+#   ░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀
+
+alias c='nvim -p src/* include/*'
+alias ff='fastfetch'
+alias ls='eza --icons'
+alias la='eza -a --icons'
+alias ll='eza -al --icons'
+alias lt='eza -a --tree --level=1 --icons'
+alias v='$EDITOR'
+alias vim='$EDITOR'
+alias ts='~/.config/ml4w/scripts/snapshot.sh'
+alias wifi='nmtui'
+alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
+alias rc='source ~/.zshrc'
+alias figlist='ls /usr/share/figlet/fonts | sed "s/\.[^.]*$//" | while read font; do echo "• $font"; done'
+alias du='du --max-depth=1 -h . | sort -h'
+alias grep='grep --color=auto'
+alias clear='sl'
+
+
+#   ░█▄█░█░░░█░█░█░█░░░█▀█░█▀█░█▀█░█▀▀
+#   ░█░█░█░░░░▀█░█▄█░░░█▀█░█▀▀░█▀▀░▀▀█
+#   ░▀░▀░▀▀▀░░░▀░▀░▀░░░▀░▀░▀░░░▀░░░▀▀▀
+
+alias ml4w='~/.config/ml4w/apps/ML4W_Welcome-x86_64.AppImage'
+alias ml4w-settings='~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage'
+alias ml4w-sidebar='ags -t sidebar'
+alias ml4w-hyprland='~/.config/ml4w/apps/ML4W_Hyprland_Settings-x86_64.AppImage'
+alias ml4w-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
+alias ml4w-hyprland-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
+alias ml4w-update='~/.config/ml4w/update.sh'
+
+
+#   ░█▀▀░▀█▀░▀█▀
+#   ░█░█░░█░░░█░
+#   ░▀▀▀░▀▀▀░░▀░
+
+alias gs='git status | less -R'
+alias gb='git branch --list | less -R'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gpl='git pull'
+alias gst='git stash'
+alias gsp='git stash; git pull'
+alias gcheck='git checkout'
+alias gcredential='git config credential.helper store'
+#alias eval-ssh-agent='eval $(ssh-agent -s)'
+alias load-github-keys='eval $(ssh-agent -s);ssh-add ~/.ssh/id_ed25519_github.com'
+
+
+#   ░█▀▀░█▀▀░█▀▄░▀█▀░█▀█░▀█▀░█▀▀
+#   ░▀▀█░█░░░█▀▄░░█░░█▀▀░░█░░▀▀█
+#   ░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░░▀░░▀▀▀
+
+alias figlet-copy='~/.config/ml4w/scripts/figlet-copy.sh'
+alias keybindings='nvim ~/dotfiles/.config/hypr/conf/keybindings/default.conf'
+alias config='nvim dotfiles/.config/hypr/conf'
+alias zshrc='nvim'
+alias zshinit='nvim ~/dotfiles/.config/zshrc/00-init'
+alias aliases='nvim ~/dotfiles/.config/zshrc/10-aliases'
+alias zshcustomization='nvim ~/dotfiles/.config/zshrc/20-customization'
+alias zshautostart='nvim ~/dotfiles/.config/zshrc/30-autostart'
+
+#   ░█▀▀░█░█░█▀▀░▀█▀░█▀▀░█▄█
+#   ░▀▀█░░█░░▀▀█░░█░░█▀▀░█░█
+#   ░▀▀▀░░▀░░▀▀▀░░▀░░▀▀▀░▀░▀
+
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias server='sudo python3 /usr/local/bin/server.py'
+alias shutdown='systemctl poweroff'
+alias update='pacman-ascii;pacman -Syu'
+alias pacman='sudo pacman --noconfirm'
+alias packages='v .config/scripts/packages.txt'
+
+#   ░█▄█░▀█▀░█▀▀░█▀▀░█▀▀░█░░░█░░░█▀█░█▀█░█▀▀░█▀█░█░█░█▀▀
+#   ░█░█░░█░░▀▀█░█░░░█▀▀░█░░░█░░░█▀█░█░█░█▀▀░█░█░█░█░▀▀█
+#   ░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+
+#alias exit="killall Terminal"
+alias worldmap='telnet mapscii.me'
+alias website-clone='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
+#alias functions='shopt -s extdebug;declare -F | grep -v "declare -f _" | declare -F $(awk "{print $3}") | column -t;shopt -u extdebug'

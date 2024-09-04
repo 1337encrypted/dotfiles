@@ -1,0 +1,64 @@
+# -----------------------------------------------------
+# ALIASES
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# General
+# -----------------------------------------------------
+alias c='nvim -p src/*.c include/*.h'
+alias ff='fastfetch'
+alias ls='eza --icons'
+alias la='eza -a --icons'
+alias ll='eza -al --icons'
+alias lt='eza -a --tree --level=1 --icons'
+alias shutdown='systemctl poweroff'
+alias v='$EDITOR'
+alias vim='$EDITOR'
+alias ts='~/.config/ml4w/scripts/snapshot.sh'
+alias wifi='nmtui'
+alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
+alias bash0='nvim ~/dotfiles/.config/bashrc/00-init'
+alias aliases='nvim ~/dotfiles/.config/bashrc/10-aliases'
+alias bash1='nvim ~/dotfiles/.config/bashrc/20-customization'
+alias bash2='nvim ~/dotfiles/.config/bashrc/30-autostart'
+alias rc='source ~/.bashrc'
+alias figlist='ls /usr/share/figlet/fonts | sed "s/\.[^.]*$//" | while read font; do echo "• $font"; done'
+
+# -----------------------------------------------------
+# ML4W Apps
+# -----------------------------------------------------
+alias ml4w='~/.config/ml4w/apps/ML4W_Welcome-x86_64.AppImage'
+alias ml4w-settings='~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage'
+alias ml4w-sidebar='ags -t sidebar'
+alias ml4w-hyprland='~/.config/ml4w/apps/ML4W_Hyprland_Settings-x86_64.AppImage'
+alias ml4w-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
+alias ml4w-hyprland-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
+alias ml4w-update='~/.config/ml4w/update.sh'
+alias keybindings="nvim dotfiles/.config/hypr/conf/keybindings/default.conf"
+
+# -----------------------------------------------------
+# Git
+# -----------------------------------------------------
+alias gs="git status | less -R"
+alias gb='git branch --list'
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gst="git stash"
+alias gsp="git stash; git pull"
+alias gcheck="git checkout"
+alias gcredential="git config credential.helper store"
+alias loadkeys='eval "$(ssh-agent -s)";ssh-add ~/.ssh/id_ed25519_github.com'
+# -----------------------------------------------------
+# Scripts
+# -----------------------------------------------------
+alias figlet-copy='~/.config/ml4w/scripts/figlet-copy.sh'
+
+
+# -----------------------------------------------------
+# System
+# -----------------------------------------------------
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias server='sudo python3 /usr/local/bin/server.py'
+
