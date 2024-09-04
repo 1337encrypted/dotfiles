@@ -11,11 +11,6 @@ cat ~/.cache/wal/sequences
 # Fastfetch
 # -----------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
-cat <<"EOF"
-        ┏━┓╻ ╻┏━┓╺┳┓╻ ╻╻┏━┓   ┏━┓┏━┓┏━╸╻ ╻
-        ┗━┓┣━┫┣━┫ ┃┃┗┳┛ ┗━┓   ┣━┫┣┳┛┃  ┣━┫
-        ┗━┛╹ ╹╹ ╹╺┻┛ ╹  ┗━┛   ╹ ╹╹┗╸┗━╸╹ ╹
-EOF
     fastfetch --config examples/13
 else
     echo

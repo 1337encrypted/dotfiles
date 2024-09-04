@@ -8,7 +8,7 @@
 
 alias c='nvim -p src/* include/*'
 alias ff='fastfetch'
-alias ls='eza --icons'
+alias ls='eza --icons --hyperlink'
 alias la='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
@@ -22,6 +22,7 @@ alias figlist='ls /usr/share/figlet/fonts | sed "s/\.[^.]*$//" | while read font
 alias du='du --max-depth=1 -h . | sort -h'
 alias grep='grep --color=auto'
 alias clear='sl'
+alias restow='cd ~/dotfiles; stow -R --target=/home/1337encrypted/.config .config -v; cd -'
 
 
 #   ░█▄█░█░░░█░█░█░█░░░█▀█░█▀█░█▀█░█▀▀
@@ -35,7 +36,6 @@ alias ml4w-hyprland='~/.config/ml4w/apps/ML4W_Hyprland_Settings-x86_64.AppImage'
 alias ml4w-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
 alias ml4w-hyprland-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
 alias ml4w-update='~/.config/ml4w/update.sh'
-
 
 #   ░█▀▀░▀█▀░▀█▀
 #   ░█░█░░█░░░█░
@@ -67,6 +67,7 @@ alias zshinit='nvim ~/dotfiles/.config/zshrc/00-init'
 alias aliases='nvim ~/dotfiles/.config/zshrc/10-aliases'
 alias zshcustomization='nvim ~/dotfiles/.config/zshrc/20-customization'
 alias zshautostart='nvim ~/dotfiles/.config/zshrc/30-autostart'
+alias packages='v .config/scripts/packages.txt'
 
 #   ░█▀▀░█░█░█▀▀░▀█▀░█▀▀░█▄█
 #   ░▀▀█░░█░░▀▀█░░█░░█▀▀░█░█
@@ -75,9 +76,8 @@ alias zshautostart='nvim ~/dotfiles/.config/zshrc/30-autostart'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias server='sudo python3 /usr/local/bin/server.py'
 alias shutdown='systemctl poweroff'
-alias update='pacman-ascii;pacman -Syu'
+alias update='pacman-ascii.sh;pacman -Syu'
 alias pacman='sudo pacman --noconfirm'
-alias packages='v .config/scripts/packages.txt'
 
 #   ░█▄█░▀█▀░█▀▀░█▀▀░█▀▀░█░░░█░░░█▀█░█▀█░█▀▀░█▀█░█░█░█▀▀
 #   ░█░█░░█░░▀▀█░█░░░█▀▀░█░░░█░░░█▀█░█░█░█▀▀░█░█░█░█░▀▀█

@@ -1,0 +1,9 @@
+Seq	Host	Starttime	JobRuntime	Send	Receive	Exitval	Signal	Command
+1	:	1723970107.062	     0.157	43893	0	0	0	nc -vz localhost $(head -n1 "$PARALLEL_TMP")-$(tail -n1 "$PARALLEL_TMP")
+2	:	1723970107.067	     0.156	53001	0	0	0	nc -vz localhost $(head -n1 "$PARALLEL_TMP")-$(tail -n1 "$PARALLEL_TMP")
+3	:	1723970107.073	     0.151	54000	0	0	0	nc -vz localhost $(head -n1 "$PARALLEL_TMP")-$(tail -n1 "$PARALLEL_TMP")
+4	:	1723970107.079	     0.145	54000	0	0	0	nc -vz localhost $(head -n1 "$PARALLEL_TMP")-$(tail -n1 "$PARALLEL_TMP")
+5	:	1723970107.084	     0.141	54000	0	0	0	nc -vz localhost $(head -n1 "$PARALLEL_TMP")-$(tail -n1 "$PARALLEL_TMP")
+6	:	1723970107.090	     0.136	54000	0	0	0	nc -vz localhost $(head -n1 "$PARALLEL_TMP")-$(tail -n1 "$PARALLEL_TMP")
+7	:	1723970107.096	     0.136	54000	0	0	0	nc -vz localhost $(head -n1 "$PARALLEL_TMP")-$(tail -n1 "$PARALLEL_TMP")
+8	:	1723970107.101	     0.138	15210	0	0	0	nc -vz localhost $(head -n1 "$PARALLEL_TMP")-$(tail -n1 "$PARALLEL_TMP")

@@ -1,0 +1,8 @@
+function canibuy {
+    if whois "$1" 2>/dev/null | grep -q 'Registrant'; then
+        echo "taken"
+    else
+        echo "available"
+    fi
+}
+

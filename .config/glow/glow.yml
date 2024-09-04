@@ -1,8 +1,40 @@
+# Glow Configuration
+
 # style name or JSON path (default "auto")
 style: "auto"
+
 # mouse support (TUI-mode only)
-mouse: false
+mouse: true
+
 # use pager to display markdown
-pager: false
+pager: true
+
 # word-wrap at width
 width: 80
+
+# Enable syntax highlighting
+highlight: true
+
+# Set custom theme (example: "solarized-dark")
+theme: "solarized-dark"
+
+# Set custom font size (for TUI-mode)
+font-size: 12
+
+# Enable line numbers in TUI-mode
+line-numbers: true
+
+# Enable auto-refresh for live updates
+auto-refresh: false
+
+# Set custom max height for TUI-mode (example: 40 lines)
+max-height: 40
+
+# Show help message (if true, shows help on launch)
+show-help: false
+
+# Enable or disable the usage of emojis
+emojis: true
+
+# Adjust the brightness of the output (example: 0.8 for 80% brightness)
+brightness: 1.0
