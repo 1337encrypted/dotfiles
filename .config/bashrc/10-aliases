@@ -5,10 +5,11 @@
 # -----------------------------------------------------
 # General
 # -----------------------------------------------------
-alias c='nvim -p src/*.c include/*.h'
+alias c='clear'
+alias nf='fastfetch'
+alias pf='fastfetch'
 alias ff='fastfetch'
-alias ls='eza --icons'
-alias la='eza -a --icons'
+alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
 alias shutdown='systemctl poweroff'
@@ -17,12 +18,6 @@ alias vim='$EDITOR'
 alias ts='~/.config/ml4w/scripts/snapshot.sh'
 alias wifi='nmtui'
 alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
-alias bash0='nvim ~/dotfiles/.config/bashrc/00-init'
-alias aliases='nvim ~/dotfiles/.config/bashrc/10-aliases'
-alias bash1='nvim ~/dotfiles/.config/bashrc/20-customization'
-alias bash2='nvim ~/dotfiles/.config/bashrc/30-autostart'
-alias rc='source ~/.bashrc'
-alias figlist='ls /usr/share/figlet/fonts | sed "s/\.[^.]*$//" | while read font; do echo "• $font"; done'
 
 # -----------------------------------------------------
 # ML4W Apps
@@ -33,14 +28,20 @@ alias ml4w-sidebar='ags -t sidebar'
 alias ml4w-hyprland='~/.config/ml4w/apps/ML4W_Hyprland_Settings-x86_64.AppImage'
 alias ml4w-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
 alias ml4w-hyprland-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
+alias ml4w-qtile-diagnosis='~/.config/ml4w/qtile/scripts/diagnosis.sh'
 alias ml4w-update='~/.config/ml4w/update.sh'
-alias keybindings="nvim dotfiles/.config/hypr/conf/keybindings/default.conf"
+
+# -----------------------------------------------------
+# Window Managers
+# -----------------------------------------------------
+
+alias Qtile='startx'
+# Hyprland with Hyprland
 
 # -----------------------------------------------------
 # Git
 # -----------------------------------------------------
-alias gs="git status | less -R"
-alias gb='git branch --list'
+alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
@@ -49,16 +50,20 @@ alias gst="git stash"
 alias gsp="git stash; git pull"
 alias gcheck="git checkout"
 alias gcredential="git config credential.helper store"
-alias loadkeys='eval "$(ssh-agent -s)";ssh-add ~/.ssh/id_ed25519_github.com'
+
 # -----------------------------------------------------
 # Scripts
 # -----------------------------------------------------
-alias figlet-copy='~/.config/ml4w/scripts/figlet-copy.sh'
-
+alias ascii='~/.config/ml4w/scripts/figlet.sh'
 
 # -----------------------------------------------------
 # System
 # -----------------------------------------------------
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias server='sudo python3 /usr/local/bin/server.py'
 
+# -----------------------------------------------------
+# Qtile
+# -----------------------------------------------------
+alias res1='xrandr --output DisplayPort-0 --mode 2560x1440 --rate 120'
+alias res2='xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120'
+alias setkb='setxkbmap de;echo "Keyboard set back to de."'

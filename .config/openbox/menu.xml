@@ -6,7 +6,8 @@
     <menu id="root-menu" label="Openbox 3">
         <item label="Terminal">
             <action name="Execute">
-                <command>alacritty --config-file ~/.config/alacritty/alacritty_openbox.toml</command>
+				<!-- <command>alacritty \-\-config-file ~/.config/alacritty/alacritty_openbox.toml</command> -->
+				<command>kitty</command>
             </action>
             <icon>utilities-terminal</icon>
         </item>

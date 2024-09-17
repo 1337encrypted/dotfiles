@@ -1,1 +1,1 @@
-/shady-waybar;/shady-waybar/mixed
+/shady-waybar;/shady-waybar/light
