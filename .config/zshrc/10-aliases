@@ -8,12 +8,14 @@
 
 alias c='nvim -p src/* include/*'
 alias ff='fastfetch'
-alias ls='eza --icons --hyperlink'
-alias la='eza -a --icons'
-alias ll='eza -al --icons'
-alias lt='eza -a --tree --level=1 --icons'
-alias v='$EDITOR'
+alias l='eza --oneline --sort=name --icons'
+alias la='eza --all --sort=name --icons --group-directories-first'
+alias ll='eza -lah --icons --sort=Name --group-directories-first --show-symlinks'
+alias ls='eza -a --sort=name --icons --hyperlink'
+alias ld='eza -D --sort=name --icons'
+alias lt='eza --sort=name --tree --level=2 --icons'
 alias vim='$EDITOR'
+alias v='nvim'
 alias ts='~/.config/ml4w/scripts/snapshot.sh'
 alias wifi='nmtui'
 alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
@@ -23,7 +25,8 @@ alias du='du --max-depth=1 -h . | sort -h'
 alias grep='grep --color=auto'
 alias clear='sl'
 alias restow='cd ~/dotfiles; stow -R --target=/home/1337encrypted/.config .config -v; cd -'
-
+alias qemu-archlinux-installer='cd ~/kernel_dev; qemu-system-x86_64 -enable-kvm -m 2G -drive file=archlinux_driver.qcow2,format=qcow2 -cdrom archlinux-2024.08.01-x86_64.iso -boot d -cpu host -smp 2 &; vncviewer localhost:5900 &; cd -'
+alias qemu-archlinux='cd ~/kernel_dev;qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=archlinux_driver.qcow2,format=qcow2 -m 2G -cpu host -smp 2 &;vncviewer localhost:5900 &; cd -'
 
 #   ░█▄█░█░░░█░█░█░█░░░█▀█░█▀█░█▀█░█▀▀
 #   ░█░█░█░░░░▀█░█▄█░░░█▀█░█▀▀░█▀▀░▀▀█
@@ -76,8 +79,10 @@ alias packages='v .config/scripts/packages.txt'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias server='sudo python3 /usr/local/bin/server.py'
 alias shutdown='systemctl poweroff'
-alias update='pacman-ascii.sh;pacman -Syu'
+alias update='pacman-ascii;pacman -Syu'
 alias pacman='sudo pacman --noconfirm'
+alias battery='upower -i $(upower -e | grep BAT) | grep -E "state|percentage"'
+
 
 #   ░█▄█░▀█▀░█▀▀░█▀▀░█▀▀░█░░░█░░░█▀█░█▀█░█▀▀░█▀█░█░█░█▀▀
 #   ░█░█░░█░░▀▀█░█░░░█▀▀░█░░░█░░░█▀█░█░█░█▀▀░█░█░█░█░▀▀█
@@ -87,3 +92,4 @@ alias pacman='sudo pacman --noconfirm'
 alias worldmap='telnet mapscii.me'
 alias website-clone='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
 #alias functions='shopt -s extdebug;declare -F | grep -v "declare -f _" | declare -F $(awk "{print $3}") | column -t;shopt -u extdebug'
+alias get_idf='source ~/esp/esp-idf/export.sh'

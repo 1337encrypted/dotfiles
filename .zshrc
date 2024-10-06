@@ -17,8 +17,15 @@
 # -----------------------------------------------------
 
 for f in ~/.config/zshrc/*; do 
-    if [ ! -d $f ] ;then
-        c=`echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom="`
-        [[ -f $c ]] && source $c || source $f
-    fi
+	if [ ! -d $f ] ;then
+		c=`echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom="`
+		[[ -f $c ]] && source $c || source $f
+	fi
 done
+
+kitty @ set-colors --all ~/.config/kitty/theme.conf 
+
+if [[ -n "$SSH_CONNECTION" ]]; then
+    export TERM="xterm-256color"
+fi
+
