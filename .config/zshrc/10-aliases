@@ -64,13 +64,6 @@ alias load-github-keys='eval $(ssh-agent -s);ssh-add ~/.ssh/id_ed25519_github.co
 
 alias figlet-copy='~/.config/ml4w/scripts/figlet-copy.sh'
 alias keybindings='nvim ~/dotfiles/.config/hypr/conf/keybindings/default.conf'
-alias config='nvim dotfiles/.config/hypr/conf'
-alias zshrc='nvim'
-alias zshinit='nvim ~/dotfiles/.config/zshrc/00-init'
-alias aliases='nvim ~/dotfiles/.config/zshrc/10-aliases'
-alias zshcustomization='nvim ~/dotfiles/.config/zshrc/20-customization'
-alias zshautostart='nvim ~/dotfiles/.config/zshrc/30-autostart'
-alias packages='v .config/scripts/packages.txt'
 
 #   ░█▀▀░█░█░█▀▀░▀█▀░█▀▀░█▄█
 #   ░▀▀█░░█░░▀▀█░░█░░█▀▀░█░█
@@ -80,8 +73,12 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias server='sudo python3 /usr/local/bin/server.py'
 alias shutdown='systemctl poweroff'
 alias update='pacman-ascii;pacman -Syu'
-alias pacman='sudo pacman --noconfirm'
 alias battery='upower -i $(upower -e | grep BAT) | grep -E "state|percentage"'
+alias pacman='sudo pacman --noconfirm'
+alias config='nvim dotfiles/.config/hypr/conf'
+alias zshrc='cd ~/dotfiles/.config/zshrc;nvim'
+alias packages='v .config/scripts/packages.txt'
+alias aliases='v dotfiles/.config/zshrc/10-aliases'
 
 
 #   ░█▄█░▀█▀░█▀▀░█▀▀░█▀▀░█░░░█░░░█▀█░█▀█░█▀▀░█▀█░█░█░█▀▀
@@ -93,3 +90,14 @@ alias worldmap='telnet mapscii.me'
 alias website-clone='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
 #alias functions='shopt -s extdebug;declare -F | grep -v "declare -f _" | declare -F $(awk "{print $3}") | column -t;shopt -u extdebug'
 alias get_idf='source ~/esp/esp-idf/export.sh'
+alias screenf='grim'
+alias screenw='hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - 
+'
+alias screenx='slurp | grim -g - '
+alias screenxc='slurp | grim -g - - | wl-copy'
+
+#   ░█░█░█▀█░█▀█
+#   ░▀▄▀░█▀▀░█░█
+#   ░░▀░░▀░░░▀░▀
+
+alias vpn='sudo openvpn --config /etc/openvpn/client/yashh.ovpn --data-ciphers AES-128-CBC'
