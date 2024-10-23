@@ -1,24 +1,22 @@
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   dependencies = {
-    -- Automatically install LSPs and related tools to stdpath for neovim
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-    -- Useful status updates for LSP.
     {
       'j-hui/fidget.nvim',
       tag = 'v1.4.0',
       opts = {
         progress = {
           display = {
-            done_icon = '✓', -- Icon shown when all LSP progress tasks are complete
+            done_icon = '✓',
           },
         },
         notification = {
           window = {
-            winblend = 0, -- Background color opacity in the notification window
+            winblend = 0,
           },
         },
       },
@@ -67,48 +65,22 @@ return { -- LSP Configuration & Plugins
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-    -- Enable the following language servers
+    -- Enable clangd directly with a specific command
+    require('lspconfig').clangd.setup {
+      cmd = { '/home/1337encrypted/esp/esp-clang/bin/clangd' },
+      capabilities = capabilities,
+      on_attach = function(client, bufnr)
+        -- Custom on_attach function if needed
+      end,
+    }
+
+    -- Ensure other language servers are set up if needed
     local servers = {
-      html = { filetypes = { 'html', 'twig', 'hbs' } },
-      lua_ls = {
-        settings = {
-          Lua = {
-            runtime = { version = 'LuaJIT' },
-            workspace = {
-              checkThirdParty = false,
-              library = {
-                '${3rd}/luv/library',
-                unpack(vim.api.nvim_get_runtime_file('', true)),
-              },
-            },
-            completion = { callSnippet = 'Replace' },
-            telemetry = { enable = false },
-            diagnostics = { disable = { 'missing-fields' } },
-          },
-        },
-      },
-      gopls = {
-        cmd = { 'gopls' },
-        settings = {
-          gopls = {
-            analyses = {
-              unusedparams = true,
-              unreachable = true,
-            },
-            staticcheck = true,
-          },
-        },
-      },
+      html = {},
+      lua_ls = {},
+      gopls = {},
       dockerls = {},
-      docker_compose_language_service = {},
-      rust_analyzer = {
-        ['rust-analyzer'] = {
-          cargo = { features = 'all' },
-          checkOnSave = true,
-          check = { command = 'clippy' },
-        },
-      },
-      -- Add other language servers here as needed
+      rust_analyzer = {},
       tailwindcss = {},
       jsonls = {},
       sqlls = {},
@@ -119,24 +91,15 @@ return { -- LSP Configuration & Plugins
       texlab = {},
     }
 
-    -- Ensure the servers and tools above are installed
+    -- Setup the remaining servers
     require('mason').setup()
-
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format lua code
-      'gopls', -- Ensure gopls is installed via Mason
-    })
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
     require('mason-lspconfig').setup {
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
-        end,
-      },
+      ensure_installed = vim.tbl_keys(servers),
     }
+
+    -- Setup other servers not relying on clangd
+    for server_name, config in pairs(servers) do
+      require('lspconfig')[server_name].setup(config)
+    end
   end,
 }

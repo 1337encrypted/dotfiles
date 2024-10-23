@@ -5,12 +5,13 @@
 # -----------------------------------------------------
 # oh-myzsh themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # -----------------------------------------------------
-ZSH_THEME=agnoster
+# ZSH_THEME=robbyrussell
 
 # -----------------------------------------------------
 # oh-myzsh plugins
 # -----------------------------------------------------
 plugins=(
+    git
     sudo
     web-search
     archlinux
@@ -45,8 +46,7 @@ setopt appendhistory
 # oh-my-posh promt
 # -----------------------------------------------------
 # Custom Theme
-# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # Shipped Theme
 # eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/agnoster.omp.json)"
-
