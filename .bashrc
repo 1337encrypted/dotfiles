@@ -22,3 +22,4 @@ for f in ~/.config/bashrc/*; do
         [[ -f $c ]] && source $c || source $f
     fi
 done
+. "$HOME/.cargo/env"
