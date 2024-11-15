@@ -80,7 +80,7 @@ alias config='nvim dotfiles/.config/hypr/conf'
 alias zshrc='cd ~/dotfiles/.config/zshrc;nvim'
 alias packages='nvim ~/.config/scripts/packages.txt'
 alias aliases='nvim ~/dotfiles/.config/zshrc/10-aliases'
-alias vkeymaps='nvim dotfiles/.config/nvim/lua/core/keymaps.lua'
+alias vkeymaps='nvim ~/dotfiles/.config/nvim/lua/core/keymaps.lua'
 
 #   ░█▄█░▀█▀░█▀▀░█▀▀░█▀▀░█░░░█░░░█▀█░█▀█░█▀▀░█▀█░█░█░█▀▀
 #   ░█░█░░█░░▀▀█░█░░░█▀▀░█░░░█░░░█▀█░█░█░█▀▀░█░█░█░█░▀▀█
@@ -91,6 +91,7 @@ alias worldmap='telnet mapscii.me'
 alias website-clone='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
 #alias functions='shopt -s extdebug;declare -F | grep -v "declare -f _" | declare -F $(awk "{print $3}") | column -t;shopt -u extdebug'
 alias get_idf='source ~/esp/esp-idf/export.sh'
+alias get_rust_esp='source ~/esp/export-esp.sh'
 alias screenf='grim'
 alias screenw='hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - 
 '

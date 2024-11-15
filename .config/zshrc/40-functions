@@ -9,10 +9,10 @@ function y() {
 
 show_goals() {
   # Prompt the user with a question and wait for their response
-  echo -n "Do you want to see your goals? (Y/n): "
+  echo -n "Do you want to see your goals? (y/N): "
   read -r response
-  # Set response to 'Y' if the user presses Enter without input
-  response=${response:-Y}
+  # Set response to 'N' if the user presses Enter without input
+  response=${response:-N}
   case "$response" in
     [Yy]* ) glow ~/.goals.md ;;  # If the response starts with Y or y, show the goals
     * ) return ;;  # For any other response, just return to the prompt
