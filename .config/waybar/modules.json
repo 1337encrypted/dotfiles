@@ -55,8 +55,8 @@
 
   // ML4W Welcome App
   "custom/ml4w-welcome": {
-    "on-click": "ags -t sidebar",
-    "on-click-right": "sleep 0.1 && ~/.config/ml4w/apps/ML4W_Welcome-x86_64.AppImage",
+    "on-click": "sleep 0.1 && ~/.config/ml4w/settings/ml4w-sidebar.sh",
+    "on-click-right": "sleep 0.1 && com.ml4w.welcome",
     "format": " ",
     "tooltip-format": "Open Sidebar"
   },
@@ -110,7 +110,7 @@
   // Settings
   "custom/settings": {
     "format": "",
-    "on-click": "com.ml4w.dotfilessettings",
+    "on-click": "sleep 0.1 && com.ml4w.dotfilessettings",
     "tooltip-format": "ML4W Dotfiles Settings"
   },
 
@@ -147,7 +147,7 @@
     // START APPS LABEL
     "format": "Apps",
     // END APPS LABEL
-    "on-click": "sleep 0.2;rofi -show drun -replace",
+    "on-click": "sleep 0.2;pkill rofi || rofi -show drun -replace",
     "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
   },
@@ -163,7 +163,7 @@
   // Power Menu
   "custom/exit": {
     "format": "",
-    "on-click": "wlogout",
+    "on-click": "~/.config/ml4w/scripts/wlogout.sh",
     "tooltip-format": "Power Menu"
   },
 
@@ -207,7 +207,7 @@
   // Clock
   "clock": {
     "format": "{:%H:%M %a}",
-    "on-click": "ags -t calendar",
+    "on-click": "ags toggle calendar",
     "tooltip": false
   },
 
@@ -303,8 +303,8 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui",
-    "on-click-right": "~/.config/ml4w/settings/networkmanager.sh"
+    "on-click": "~/.config/ml4w/settings/networkmanager.sh",
+    "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
   },
 
   // Battery

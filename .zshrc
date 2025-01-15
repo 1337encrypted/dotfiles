@@ -16,6 +16,10 @@
 # with copies of files from ~/.config/zshrc 
 # -----------------------------------------------------
 
+# -----------------------------------------------------
+# Load modular configarion
+# -----------------------------------------------------
+
 for f in ~/.config/zshrc/*; do 
     if [ ! -d $f ] ;then
         c=`echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom="`
@@ -23,7 +27,10 @@ for f in ~/.config/zshrc/*; do
     fi
 done
 
-show_goals
+# -----------------------------------------------------
+# Load single customization file (if exists)
+# -----------------------------------------------------
 
-
-reset
+if [ -f ~/.zshrc_custom ] ;then
+    source ~/.zshrc_custom
+fi
