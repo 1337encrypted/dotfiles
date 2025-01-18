@@ -11,7 +11,7 @@ alias ff='fastfetch'
 alias l='eza --oneline --sort=name --icons'
 alias la='eza --all --sort=name --icons --group-directories-first'
 alias ll='eza -lah --icons --sort=Name --group-directories-first --show-symlinks'
-alias ls='eza -a --sort=name --icons --hyperlink'
+alias ls='eza --sort=name --icons --hyperlink'
 alias ld='eza -D --sort=name --icons'
 alias lt='eza --sort=name --tree --icons'
 alias lti='eza --sort=name --tree --level=3 --icons'
@@ -104,7 +104,8 @@ alias screenxc='slurp | grim -g - - | wl-copy'
 #   ░▀▄▀░█▀▀░█░█
 #   ░░▀░░▀░░░▀░▀
 
-alias vpn='sudo openvpn --config /etc/openvpn/client/yashh.ovpn --data-ciphers AES-128-CBC'
+alias vpn_bgm='sudo openvpn --config /etc/openvpn/client/work_bgm.ovpn --data-ciphers AES-128-CBC'
+alias vpn_bglr='sudo openvpn --config /etc/openvpn/client/work_bglr.ovpn --data-ciphers AES-128-CBC'
 
 #   ░█▀█░█▀▄░█▀▄░█░█░▀█▀░█▀█░█▀█░░░░░█▀▀░█░░░▀█▀
 #   ░█▀█░█▀▄░█░█░█░█░░█░░█░█░█░█░▄▄▄░█░░░█░░░░█░

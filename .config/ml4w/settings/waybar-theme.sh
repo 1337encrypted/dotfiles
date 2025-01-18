@@ -1,1 +1,1 @@
-/shady-waybar;/shady-waybar/mixed
+/ml4w-modern;/ml4w-modern/mixed
